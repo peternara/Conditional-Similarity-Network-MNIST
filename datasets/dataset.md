@@ -6,6 +6,8 @@ When you use the dataset
 Unzip the datasets.
 Each file is a byte code. So you have to change it to integer. Here is an example of decoding the datasets.
 
+```
+
 import numpy as np
 from struct import *
 
@@ -21,6 +23,9 @@ for i in range(4000):
     image = np.reshape(unpack(len(image_byte) * 'B', image_byte), [28, 28, 3])
     digit = unpack(len(digit_byte) * 'B', digit_byte)
     color = unpack(len(color_byte) * 'B', color_byte)
+    
+```
+
 Then, you can get an image and the corresponding digit and color,
 Note that digit is not a one-hot vector, but a scalar value.
 
